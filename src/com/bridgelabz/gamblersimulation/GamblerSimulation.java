@@ -51,6 +51,25 @@ public class GamblerSimulation {
 		
 		
 	}
+	public static void luckyAndUnluckyMonth() {
+		int noOfDays=30;
+		int amountInADay=0;
+		String luckyDays="";
+		String unLuckyDays="";
+		for(int day=1; day<=noOfDays;day++) {
+			amountInADay=gameResigning(TOTAL_STAKE);
+			if(amountInADay==TOTAL_STAKE+0.5*TOTAL_STAKE) {
+				luckyDays+=day+" ";
+			}
+			else {
+				unLuckyDays+=day+" ";
+			}
+				
+			
+		}
+		System.out.println("Lucky days:"+luckyDays);
+		System.out.println("Unlucky days:"+unLuckyDays);
+	}
 	
 	public static void main(String[] args) {
 		
@@ -63,7 +82,7 @@ public class GamblerSimulation {
 		totalAmount=gamePlayForDays(noOfDays, availableBalance);
 		System.out.println("Amount after "+ noOfDays+" days of play:"+totalAmount);
 		gameForMonth();
-
+		luckyAndUnluckyMonth();
 
 	}
 

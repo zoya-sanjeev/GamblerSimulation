@@ -33,9 +33,25 @@ public class GamblerSimulation {
 		
 	}
 	
-	public static void gameForMonth(int availableBalance) {
+	public static void gameForMonth() {
+		int noOfDays=30;
+		int amountInADay=0;
+		for(int day=1; day<=noOfDays;day++) {
+			System.out.print("Day "+day);
+			amountInADay=gameResigning(TOTAL_STAKE);
+			if(amountInADay==TOTAL_STAKE+0.5*TOTAL_STAKE) {
+				System.out.println(" Won By:"+(int)(TOTAL_STAKE+0.5*TOTAL_STAKE-TOTAL_STAKE));
+			}
+			else {
+				System.out.println(" Lost By:"+(int)(TOTAL_STAKE-0.5*TOTAL_STAKE));
+			}
+				
+			
+		}
+		
 		
 	}
+	
 	public static void main(String[] args) {
 		
 		System.out.println("Total stake="+TOTAL_STAKE);
@@ -46,7 +62,8 @@ public class GamblerSimulation {
 		int totalAmount=0;
 		totalAmount=gamePlayForDays(noOfDays, availableBalance);
 		System.out.println("Amount after "+ noOfDays+" days of play:"+totalAmount);
-		
+		gameForMonth();
+
 
 	}
 

@@ -19,16 +19,21 @@ public class GamblerSimulation {
 			availableBalance=playGame(availableBalance);
 			
 			}
-			System.out.println("Available Balance:"+availableBalance);
 			return availableBalance;
 		
 	}
 	public static int gamePlayForDays(int noOfDays, int availableBalance) {
 		int totalAmount=availableBalance;
+		int amountInOneDay=0;
 		for(int day=1; day<=noOfDays;day++) {
-			totalAmount+=gameResigning(totalAmount);
+			amountInOneDay=gameResigning(TOTAL_STAKE);
+			totalAmount+=amountInOneDay;
 		}
 		return totalAmount;
+		
+	}
+	
+	public static void gameForMonth(int availableBalance) {
 		
 	}
 	public static void main(String[] args) {

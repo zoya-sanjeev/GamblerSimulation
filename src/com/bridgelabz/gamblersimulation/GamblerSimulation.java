@@ -21,8 +21,11 @@ public class GamblerSimulation {
 		System.out.println("Total stake="+TOTAL_STAKE);
 		System.out.println("Bet per game="+BET_PER_GAME);
 		int availableBalance=TOTAL_STAKE;
+		while(availableBalance<=TOTAL_STAKE+0.5*TOTAL_STAKE && availableBalance>=TOTAL_STAKE-0.5*TOTAL_STAKE) {
 		availableBalance=playGame(availableBalance);
-		System.out.println(availableBalance);
+		System.out.println("Balance available:"+availableBalance);
+		}
+		
 
 	}
 

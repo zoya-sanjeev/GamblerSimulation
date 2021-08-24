@@ -1,5 +1,7 @@
 package com.bridgelabz.gamblersimulation;
 
+import java.util.Scanner;
+
 public class GamblerSimulation {
 	
 	public static final int TOTAL_STAKE=100;
@@ -72,7 +74,7 @@ public class GamblerSimulation {
 	}
 	
 	public static void main(String[] args) {
-		
+
 		System.out.println("Total stake="+TOTAL_STAKE);
 		System.out.println("Bet per game="+BET_PER_GAME);
 		int availableBalance=TOTAL_STAKE;
@@ -83,7 +85,9 @@ public class GamblerSimulation {
 		System.out.println("Amount after "+ noOfDays+" days of play:"+totalAmount);
 		gameForMonth();
 		luckyAndUnluckyMonth();
-
+		if(totalAmount>TOTAL_STAKE)
+			gameForMonth();
+		
 	}
 
 }
